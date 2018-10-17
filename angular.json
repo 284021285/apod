@@ -26,9 +26,10 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.styl"
-            ],
+            "styles": [ "src/assets/styles/index.styl" ],
+            "stylePreprocessorOptions": {
+              "includePaths": [ "src/assets/styles" ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -76,8 +77,11 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.styl"
+              "src/assets/styles/index.styl"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [ "src/assets/styles" ]
+            },
             "scripts": [],
             "assets": [
               "src/favicon.ico",
