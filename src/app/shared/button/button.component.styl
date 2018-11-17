@@ -1,0 +1,68 @@
+@import "variables";
+@import "mixins/position";
+
+/**   Output styles responsible for resizing the button component   **/
+is-button-size( size )
+  font-size: size * fontSizeUnit;
+  padding: (size * fontSizeUnit * 0.5) (size * fontSizeUnit * 1.5);
+
+
+:host
+    is-button-size(20);
+    display: inline-block;
+    border-radius: 999px; // Makes the shape an ideal capsule/pill
+    text-decoration: none;
+    cursor: pointer;
+    transition: .15s;
+    font-weight: bold;
+
+    // Sizes
+    &[size="sm"]
+      is-button-size(12);
+
+    &[size="md"]
+      is-button-size(16);
+
+    &[size="lg"]
+      is-button-size(20);
+
+    // Types
+    &[type="outlined"]
+      border: 1px solid textLightColor;
+      color: textLightColor;
+
+      &:hover
+        background: rgba(textLightColor, 0.33);
+
+      &:active
+        background: rgba(textLightColor, 0.85);
+
+    &[type="text"]
+      color: textLightColor;
+
+      &:hover
+        background: rgba(textLightColor, 0.33);
+
+      &:active
+        background: rgba(textLightColor, 0.85);
+
+    &[type="contained"]
+      background: backgroundLightColor;
+      color: textDarkColor;
+      position: relative;
+
+      &:before
+        content: '';
+        background: transparent
+        transform: scaleY(0);
+        border-radius: inherit;
+        position: absolute;
+        top: -5px;
+        left: @top;
+        right: @top;
+        bottom: @top;
+        transition: .15s;
+
+      &:hover:before
+        background: rgba( backgroundLightColor, .33 );
+        transform: scale(1);

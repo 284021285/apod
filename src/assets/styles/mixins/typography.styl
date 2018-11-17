@@ -1,0 +1,25 @@
+@import "../variables";
+
+/*    Shortcut for setting font-size, letter spacing and weight.
+ *    - fontSize          number
+ *    - letterSpacing     number
+ *    - weight            number
+ **/
+is-text( fontSize, letterSpacing = null, weight = null )
+  font-size: fontSize * fontSizeUnit;
+  margin-top: 0;
+  margin-bottom: fontSize * fontSizeUnit * 0.25;
+
+  if letterSpacing != null
+    letter-spacing: letterSpacing * fontSizeUnit;
+
+  if weight != null
+    font-weight: weight;
+
+
+/*    Shortcut for setting heading styles, letter spacing and weight. */
+is-heading( fontSize, letterSpacing = null, weight = null )
+  is-text(fontSize, letterSpacing, weight);
+
+  &:first-letter
+    text-transform: capitalize;

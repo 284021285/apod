@@ -1,0 +1,29 @@
+@import "variables";
+@import "mixins/typography";
+
+html
+  //font-size: fontSizeBase;
+  color: white;
+  font-family: fontFaceBody;
+
+body, p
+  is-text(18, 0.28, 400);
+  margin-bottom: 16 * fontSizeUnit;
+
+.overline
+  is-text(12, 1.8, 400);
+  text-transform: uppercase;
+
+// Headings. More about scaling system - https://material.io/design/typography/the-type-system.html#type-scale
+h1, .h1
+  is-heading(96, -1.5, 300);
+h2, .h2
+  is-heading(60, -0.5, 300);
+h3, .h3
+  is-heading(48, 0, 400);
+h4, .h4
+  is-heading(34, 0.25, 400);
+h5, .h5
+  is-heading(24, 0, 400);
+h6, .h6
+  is-heading(20, 0.15, 500);

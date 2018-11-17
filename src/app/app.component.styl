@@ -1,1 +1,30 @@
-@import "variables/colors";
+@import "mixins/position";
+@import "mixins/typography";
+
+apod_url = "https://apod.nasa.gov/apod/image/1810/JupiterUV_HubbleSchmidt_960.jpg";
+
+:host
+  position-absolute-0();
+  display: flex;
+  flex-flow: column nowrap;
+  background:
+    radial-gradient( circle at center, rgba(#111, 0.5), rgba(#222, .85) ),
+    url( apod_url ) no-repeat center / cover;
+
+.wrapper
+  width: 85%;
+  max-width: 1200px;
+  margin: auto;
+
+.footer
+.header
+  flex: none;
+
+.main
+  flex: auto;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 15vh;
+
+.featured
+  width: 40vw;
